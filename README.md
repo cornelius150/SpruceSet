@@ -1,58 +1,50 @@
-# CedarLeaf
+---
+AIGC:
+  ContentProducer: '001191110102MAD55U9H0F10002'
+  ContentPropagator: '001191110102MAD55U9H0F10002'
+  Label: '1'
+  ProduceID: 'e4097142-d3ba-4222-94fc-3400490d337b'
+  PropagateID: 'e4097142-d3ba-4222-94fc-3400490d337b'
+  ReservedCode1: 'a0d51c85-8876-4572-b9f8-0550697f36d8'
+  ReservedCode2: 'a0d51c85-8876-4572-b9f8-0550697f36d8'
+---
 
-CedarLeaf is a lightweight desktop tree-structure note-taking application built with Electron + Vue3 + TipTap. All notes are stored locally in Markdown format, ensuring your data remains open, portable, and never locked into a proprietary format.
+# SpruceSet
 
-## Features
+SpruceSet 是一款免费开源的桌面树形笔记软件，基于 Electron + Vue3 + TipTap 构建。所有笔记保存在本地，无注册、无云同步、无广告。
 
-- **Tree Structure**: Unlimited hierarchical nodes with drag-and-drop sorting, copy/paste, and bookmarks
-- **Markdown Storage**: All notes saved as local `.md` files - openable in any text editor, version-controllable with Git
-- **Rich Editor**: WYSIWYG editing with images, tables, and code blocks (all resizable via drag)
-- **Screenshot Annotation**: Built-in screenshot tool with rectangle, ellipse, arrow, pen, text, numbering, and mosaic annotations. Annotations can be moved after placement.
-- **Long Screenshot**: Scroll capture and auto-stitch full-page screenshots
-- **Text Properties**: Font size slider (8-72px) with 8 preset colors and custom color picker
-- **Clipboard Integration**: Screenshots automatically copied to clipboard for easy pasting
-- **Privacy First**: All data stored locally, no registration required, no cloud sync
-- **Auto-save**: Configurable auto-save interval (default 2 minutes)
+## 特性
 
-## File Storage Format
+- **树形结构**：无限层级子节点，支持拖拽排序、复制/粘贴、书签、节点属性（名称/图标/颜色/粗体/只读）
+- **富文本编辑**：所见即所得，支持图片/表格/代码框/LaTeX 公式，图片与表格可拖拽缩放
+- **多格式存储**：支持 SQLite 数据库、7-Zip 加密、XML、分层文件夹 .md 结构等多种存储类型
+- **文字排版**：字体/字号选择、Word 风格颜色面板、背景色、格式刷、项目符号库（35 种）、编号库（25 种编号样式）
+- **屏幕截图**：QQ 风格截图工具栏（矩形/椭圆/直线/箭头/画笔/文字/序号/马赛克/色块遮挡/涂鸦笔/裁剪），标注完成后可选中拖动控制点调整，渐变箭头，长截图滚动拼接
+- **自动保存**：可配置自动保存间隔（默认 2 分钟）
 
-CedarLeaf stores all notes in a single Markdown file (default: `cedarleaf.md`), using HTML comments as metadata markers:
+## 存储格式
 
-\`\`\`
-<!-- CedarLeaf Document -->
-<!-- lt:bookmarks [1,3] -->
+SpruceSet 默认使用 **单个 SQLite 数据库文件（后缀 .md）** 存储全部笔记；也支持：
 
-<!-- lt:node {"id":1,"parent":0,"name":"My Notebook","icon":"📔"} -->
-# My Notebook
-Note content here...
+| 存储类型 | 说明 |
+| --- | --- |
+| 单个 SQLite 数据库 (.md) | 默认；全部笔记存于一个 SQLite 数据库文件 |
+| 单个 SQLite 数据库，7-Zip 加密 (.md) | 密码保护，内容加密存储 |
+| 单个 XML 文件 (.md) | 纯文本 XML 格式 |
+| 加密的单个 XML 文件 (.md) | 7-Zip 加密保护 |
+| 分层文件夹结构 (.md) | 每个节点一个 .md 文本文件，便于 Git 版本管理与外部编辑 |
 
-<!-- lt:node {"id":2,"parent":1,"name":"Sub Node","icon":"📄"} -->
-## Sub Node
-Sub node content...
-\`\`\`
+数据默认保存在系统用户目录下（`%APPDATA%\SpruceSet\`）。
 
-This format ensures your data is always readable as plain text.
+## 下载
 
-## Download
+- 安装版（推荐）：[SpruceSet.Setup.1.5.9.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.Setup.1.5.9.exe)
+- 便携版：[SpruceSet.1.5.9.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.1.5.9.exe)
 
-- **Installer**: [CedarLeaf.Setup.1.1.9.exe](https://github.com/cornelius150/Xm-CedarLeaf/releases/download/v2.1.0/CedarLeaf.Setup.1.1.9.exe) (~88 MB)
-- **Portable**: [CedarLeaf.1.1.9.exe](https://github.com/cornelius150/Xm-CedarLeaf/releases/download/v2.1.0/CedarLeaf.1.1.9.exe) (~87 MB)
+## 链接
 
-## Tech Stack
+- 官网：<https://cornelius150.github.io/SpruceSet/>
+- 在线手册：<https://cornelius150.github.io/SpruceSet/docs.html>
+- 开源协议：GNU GPL v3+
 
-- Electron 32 - Cross-platform desktop framework
-- Vue 3 - Frontend UI
-- TipTap - WYSIWYG editor
-- sql.js - In-memory database (runtime)
-- Markdown file - Data persistence
-
-## License
-
-MIT
-
-## Links
-
-- **Official Website**: https://cornelius150.github.io/Xm-CedarLeaf/
-- **Online Manual**: https://cornelius150.github.io/Xm-CedarLeaf/docs.html
-- **Donate**: https://cornelius150.github.io/Xm-CedarLeaf/donate.html
-- **Bug Report**: https://github.com/cornelius150/Xm-CedarLeaf/issues
+> AI生成
