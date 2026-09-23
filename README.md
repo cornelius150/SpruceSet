@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: 'e4097142-d3ba-4222-94fc-3400490d337b'
-  PropagateID: 'e4097142-d3ba-4222-94fc-3400490d337b'
-  ReservedCode1: 'a0d51c85-8876-4572-b9f8-0550697f36d8'
-  ReservedCode2: 'a0d51c85-8876-4572-b9f8-0550697f36d8'
+  ProduceID: '69705db8-022c-49b0-890a-12f7ae45f7c3'
+  PropagateID: '69705db8-022c-49b0-890a-12f7ae45f7c3'
+  ReservedCode1: '2d61e254-0d47-46f7-b5bc-b6bd80f80ce2'
+  ReservedCode2: '2d61e254-0d47-46f7-b5bc-b6bd80f80ce2'
 ---
 
 # SpruceSet
@@ -24,22 +24,22 @@ SpruceSet 是一款免费开源的桌面树形笔记软件，基于 Electron + V
 
 ## 存储格式
 
-SpruceSet 默认使用 **单个 SQLite 数据库文件（后缀 .md）** 存储全部笔记；也支持：
+SpruceSet 默认使用 **分层文件夹结构（每个节点一个 .md 文件）** 存储全部笔记；也支持：
 
 | 存储类型 | 说明 |
 | --- | --- |
-| 单个 SQLite 数据库 (.md) | 默认；全部笔记存于一个 SQLite 数据库文件 |
+| 分层文件夹结构 (.md) | **默认**；每个节点一个纯文本 Markdown 文件，可用任意编辑器/Git 管理，支持图片/表格/代码框等富文本 |
+| 单个 SQLite 数据库 (.md) | 全部笔记存于一个 SQLite 数据库文件 |
 | 单个 SQLite 数据库，7-Zip 加密 (.md) | 密码保护，内容加密存储 |
 | 单个 XML 文件 (.md) | 纯文本 XML 格式 |
 | 加密的单个 XML 文件 (.md) | 7-Zip 加密保护 |
-| 分层文件夹结构 (.md) | 每个节点一个 .md 文本文件，便于 Git 版本管理与外部编辑 |
 
 数据默认保存在系统用户目录下（`%APPDATA%\SpruceSet\`）。
 
 ## 下载
 
-- 安装版（推荐）：[SpruceSet.Setup.1.5.9.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.Setup.1.5.9.exe)
-- 便携版：[SpruceSet.1.5.9.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.1.5.9.exe)
+- 安装版（推荐）：[SpruceSet.Setup.1.6.0.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.Setup.1.6.0.exe)
+- 便携版：[SpruceSet.1.6.0.exe](https://github.com/cornelius150/SpruceSet/releases/download/v2.1.0/SpruceSet.1.6.0.exe)
 
 ## 链接
 
