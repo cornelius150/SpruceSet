@@ -12,6 +12,10 @@
   <!-- Netlify Identity Widget（用于 GitHub 登录认证） -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
+    // Netlify Identity 站点配置（GitHub 登录认证）
+    window.netlifyIdentity = window.netlifyIdentity || {};
+    window.netlifyIdentity.apiURL = 'https://preeminent-beignet-49b11d.netlify.app/.netlify/identity';
+
     // 登录成功后跳转回 CMS
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
