@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>支持开发者 - SpruceSet</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .qr-img { width:200px; height:200px; object-fit:contain; border-radius:8px; border:1px solid #e8eef5; }
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -24,8 +27,8 @@
 <div style="height:60px;"></div>
 <section class="section">
   <div class="container">
-    <h2>支持开发者</h2>
-    <p style="text-align:center;color:#888;max-width:600px;margin:0 auto 32px;">
+    <h2 id="donate-title">支持开发者</h2>
+    <p id="donate-intro" style="text-align:center;color:#888;max-width:600px;margin:0 auto 32px;">
       SpruceSet 是一款免费开源的桌面笔记软件，开发和维护需要投入大量时间和精力。<br>
       如果 SpruceSet 对你有帮助，欢迎请开发者喝杯咖啡 ☕
     </p>
@@ -34,15 +37,15 @@
       <div class="donate-card">
         <div class="icon" style="font-size:32px;">💚</div>
         <h3>微信捐赠</h3>
-        <p style="color:#888;font-size:14px;">扫码请开发者喝咖啡</p>
-        <div class="qr">微信收款码</div>
+        <p id="wechat-text" style="color:#888;font-size:14px;">扫码请开发者喝咖啡</p>
+        <div class="qr" id="wechat-qr">微信收款码</div>
         <p style="color:#999;font-size:12px;">捐赠金额随意，感谢你的支持</p>
       </div>
       <div class="donate-card">
         <div class="icon" style="font-size:32px;">💙</div>
         <h3>支付宝捐赠</h3>
-        <p style="color:#888;font-size:14px;">扫码请开发者喝咖啡</p>
-        <div class="qr">支付宝收款码</div>
+        <p id="alipay-text" style="color:#888;font-size:14px;">扫码请开发者喝咖啡</p>
+        <div class="qr" id="alipay-qr">支付宝收款码</div>
         <p style="color:#999;font-size:12px;">捐赠金额随意，感谢你的支持</p>
       </div>
     </div>
@@ -68,47 +71,22 @@
       </div>
     </div>
 
-    <div style="margin-top:40px;padding:28px;background:#f8fafd;border-radius:12px;">
+    <div id="fund-section" style="margin-top:40px;padding:28px;background:#f8fafd;border-radius:12px;">
       <h3 style="text-align:center;color:#2c3e50;">💰 捐赠资金的用途</h3>
       <p style="text-align:center;color:#888;font-size:14px;margin-top:16px;">所有捐赠将用于软件的版本更新与日常维护，包括：</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px;">
-        <div style="padding:18px;background:#fff;border:1px solid #e8eef5;border-radius:8px;">
-          <p style="color:#2c3e50;font-weight:bold;font-size:15px;margin-bottom:6px;">开发维护</p>
-          <p style="color:#888;font-size:13px;line-height:1.6;">功能开发、缺陷修复、版本发布所需的时间与精力</p>
-        </div>
-        <div style="padding:18px;background:#fff;border:1px solid #e8eef5;border-radius:8px;">
-          <p style="color:#2c3e50;font-weight:bold;font-size:15px;margin-bottom:6px;">基础设施</p>
-          <p style="color:#888;font-size:13px;line-height:1.6;">官网、在线手册与下载服务的托管费用</p>
-        </div>
-        <div style="padding:18px;background:#fff;border:1px solid #e8eef5;border-radius:8px;">
-          <p style="color:#2c3e50;font-weight:bold;font-size:15px;margin-bottom:6px;">开发工具</p>
-          <p style="color:#888;font-size:13px;line-height:1.6;">代码签名证书、开发测试环境等必要开支</p>
-        </div>
-        <div style="padding:18px;background:#fff;border:1px solid #e8eef5;border-radius:8px;">
-          <p style="color:#2c3e50;font-weight:bold;font-size:15px;margin-bottom:6px;">回馈上游</p>
-          <p style="color:#888;font-size:13px;line-height:1.6;">向本软件所依赖的开源社区回馈贡献</p>
-        </div>
-      </div>
+      <div id="fund-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px;"></div>
     </div>
 
     <div style="margin-top:32px;padding:28px;border:1px solid #e8eef5;border-radius:12px;">
       <h3 style="color:#555;">📜 捐赠条款</h3>
-      <ul style="padding-left:20px;color:#888;font-size:14px;line-height:1.9;">
-        <li><strong style="color:#555;">完全自愿</strong>：捐赠是您在完全自愿前提下的支持行为，不存在任何强制或诱导。是否捐赠、捐赠多少均不影响您使用本软件的全部功能。</li>
-        <li><strong style="color:#555;">非购买行为</strong>：捐赠不构成任何商品或服务的购买，不形成任何债权债务关系，捐赠方不会因此获得除公开致谢之外的特殊权利或回报。</li>
-        <li><strong style="color:#555;">用途声明</strong>：捐赠资金将全部用于本软件的版本更新、日常维护及相关基础设施建设，不以营利为目的。</li>
-        <li><strong style="color:#555;">不予退还</strong>：捐赠一经完成即不可撤销、不可退还，请在捐赠前确认金额与意愿。</li>
-        <li><strong style="color:#555;">税务说明</strong>：捐赠不属于公益慈善捐赠，无法开具公益捐赠票据或用于税前扣除。</li>
-        <li><strong style="color:#555;">未成年人</strong>：未成年人进行捐赠应事先取得监护人同意。</li>
-        <li><strong style="color:#555;">条款变更</strong>：本页条款如有更新，将在本页面公布，更新后立即生效。</li>
-      </ul>
+      <ul id="terms-list" style="padding-left:20px;color:#888;font-size:14px;line-height:1.9;"></ul>
       <p style="color:#666;font-size:14px;line-height:1.8;margin-top:20px;padding-top:18px;border-top:1px dashed #e8eef5;">
         本软件基于 <strong>GNU GPL v3+</strong> 授权发布，任何人都有免费使用、学习和分发的权利。即使不捐赠，您依然拥有完整的软件使用体验。
       </p>
     </div>
 
     <div style="margin-top:24px;text-align:center;">
-      <p style="color:#888;font-size:15px;">感谢每一位支持 SpruceSet 的用户！</p>
+      <p id="thanks-msg" style="color:#888;font-size:15px;">感谢每一位支持 SpruceSet 的用户！</p>
       <p style="color:#aaa;font-size:13px;margin-top:8px;">你的支持是持续开发的动力</p>
     </div>
   </div>
@@ -120,5 +98,67 @@
     <p>GNU GPL v3+ 开源协议 | <a href="https://github.com/cornelius150/SpruceSet" target="_blank">GitHub</a> | <a href="docs.html">在线手册</a></p>
   </div>
 </footer>
+
+<script>
+// 从 content/donate.json 加载内容并动态渲染
+(function() {
+  // GitHub Pages 子路径前缀（如果有的话）
+  var basePath = '';
+  // 自动检测子路径（如 /SpruceSet/）
+  var path = window.location.pathname;
+  var match = path.match(/^(\/[^/]+)\//);
+  if (match && match[1] !== '/admin') basePath = match[1];
+
+  fetch(basePath + '/content/donate.json', { cache: 'no-cache' })
+    .then(function(r) { return r.ok ? r.json() : Promise.reject('HTTP ' + r.status) })
+    .then(function(d) {
+      // 标题
+      if (d.title) document.getElementById('donate-title').textContent = d.title;
+      // 引导语
+      if (d.intro) document.getElementById('donate-intro').innerHTML = d.intro.replace(/\n/g, '<br>');
+      // 微信收款码
+      if (d.wechat_qr) {
+        var el = document.getElementById('wechat-qr');
+        el.innerHTML = '<img class="qr-img" src="' + d.wechat_qr + '" alt="微信收款码" />';
+        el.style.padding = '0';
+        el.style.background = 'transparent';
+        el.style.border = 'none';
+      }
+      if (d.wechat_text) document.getElementById('wechat-text').textContent = d.wechat_text;
+      // 支付宝收款码
+      if (d.alipay_qr) {
+        var el2 = document.getElementById('alipay-qr');
+        el2.innerHTML = '<img class="qr-img" src="' + d.alipay_qr + '" alt="支付宝收款码" />';
+        el2.style.padding = '0';
+        el2.style.background = 'transparent';
+        el2.style.border = 'none';
+      }
+      if (d.alipay_text) document.getElementById('alipay-text').textContent = d.alipay_text;
+      // 资金用途
+      if (d.fund_usage && d.fund_usage.length) {
+        var grid = document.getElementById('fund-grid');
+        grid.innerHTML = d.fund_usage.map(function(item) {
+          return '<div style="padding:18px;background:#fff;border:1px solid #e8eef5;border-radius:8px;">' +
+            '<p style="font-size:20px;margin-bottom:6px;">' + (item.icon || '') + '</p>' +
+            '<p style="color:#2c3e50;font-weight:bold;font-size:15px;margin-bottom:6px;">' + item.title + '</p>' +
+            '<p style="color:#888;font-size:13px;line-height:1.6;">' + item.desc + '</p>' +
+            '</div>';
+        }).join('');
+      }
+      // 捐赠条款
+      if (d.terms && d.terms.length) {
+        var list = document.getElementById('terms-list');
+        list.innerHTML = d.terms.map(function(t) {
+          return '<li><strong style="color:#555;">' + t.title + '</strong>：' + t.content + '</li>';
+        }).join('');
+      }
+      // 致谢语
+      if (d.thanks) document.getElementById('thanks-msg').textContent = d.thanks;
+    })
+    .catch(function(e) {
+      console.log('donate.json 加载失败，使用默认内容:', e);
+    });
+})();
+</script>
 </body>
 </html>
