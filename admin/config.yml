@@ -1,6 +1,9 @@
 backend:
   name: git-gateway
   branch: gh-pages
+  # Netlify Identity / Git Gateway 服务地址（用于 GitHub 登录认证）
+  identity_url: https://preeminent-beignet-49b11d.netlify.app/.netlify/identity
+  gateway_url: https://preeminent-beignet-49b11d.netlify.app/.netlify/git
 
 # 上传的图片保存目录
 media_folder: "images"
