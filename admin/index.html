@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>内容管理 - SpruceSet</title>
   <link rel="icon" type="image/png" href="../spruceset-icon.png" />
+  <!-- 先设置 Netlify Identity 站点地址，再加载 widget（顺序很重要） -->
+  <script>
+    window.netlifyIdentity = window.netlifyIdentity || {};
+    window.netlifyIdentity.apiURL = 'https://preeminent-beignet-49b11d.netlify.app/.netlify/identity';
+  </script>
+  <!-- Netlify Identity Widget（用于 GitHub 登录认证） -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
-  <!-- Netlify Identity Widget（用于 GitHub 登录认证） -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    // Netlify Identity 站点配置（GitHub 登录认证）
-    window.netlifyIdentity = window.netlifyIdentity || {};
-    window.netlifyIdentity.apiURL = 'https://preeminent-beignet-49b11d.netlify.app/.netlify/identity';
-
     // 登录成功后跳转回 CMS
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
